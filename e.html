@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Review Portal | SCRUM-9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0052cc;
+            --secondary: #0747a6;
+            --bg: #f4f5f7;
+            --text: #172b4d;
+            --border: #dfe1e6;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            background: white;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-top: 10px solid var(--primary);
+        }
+
+        .header {
+            padding: 30px;
+            background: #fff;
+            border-bottom: 2px solid var(--bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .status-badge {
+            background: #deebff;
+            color: #0747a6;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            transition: 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(0, 82, 204, 0.2);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--secondary);
+        }
+
+        .footer {
+            background: #fafbfc;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b778c;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <div class="header">
+        <h1>مراجعة الأداء الوظيفي</h1>
+        <span class="status-badge">SCRUM-9</span>
+    </div>
+
+    <div class="content">
+        <div class="input-group">
+            <label>اسم الموظف</label>
+            <input type="text" placeholder="مثال: أحمد محمود">
+        </div>
+
+        <div class="grid">
+            <div class="input-group">
+                <label>تاريخ المراجعة</label>
+                <input type="date">
+            </div>
+            <div class="input-group">
+                <label>القسم</label>
+                <select>
+                    <option>الموارد البشرية</option>
+                    <option>تطوير البرمجيات</option>
+                    <option>التسويق والمبيعات</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>التقييم العام (1-10)</label>
+            <input type="range" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output style="font-weight: bold; color: var(--primary); margin-right: 10px;">5</output>
+        </div>
+
+        <div class="input-group">
+            <label>ملاحظات المراجعة الفنية</label>
+            <textarea rows="4" placeholder="اكتب الملاحظات والتوصيات هنا..."></textarea>
+        </div>
+
+        <button class="btn-submit">اعتماد المراجعة النهائية</button>
+    </div>
+
+    <div class="footer">
+        نظام إدارة الموارد البشرية | تم الربط برمجياً مع Jira عبر SCRUM-9
+    </div>
+</div>
+
+</body>
+</html>
